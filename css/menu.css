@@ -1,0 +1,28 @@
+
+#sidebar {
+    background-color: #383838;
+    padding: 10px;
+}
+
+#sidebar a:hover, a:focus {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#sidebar.nav > li > a,
+#sidebar.nav > li > a:link {
+    background-color: #383838;
+    color: #FFF;
+}
+
+#sidebar.nav > li > a:hover,
+#sidebar.nav > li > a:focus {
+    background-color: #8C8C8C;
+}
+
+#sidebar.nav-pills > li.active > a,
+#sidebar.nav-pills > li.active > a:hover,
+#sidebar.nav-pills > li.active > a:focus {
+    color: #FFF;
+    background-color: #C72A25;
+}
