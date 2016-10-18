@@ -21,7 +21,7 @@ if (isset($_GET['type'])) {
         <!--<link href="css/bootstrap-material-design-master/dist/css/ripples.min.css" rel="stylesheet" type="text/css"/>-->
         <link href=../../"css/bootstrap-material-design-master/dist/css/material.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap-material-design-master/dist/css/material-wfont.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>        
+        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>
         <link href="../../css/fieldset.css" rel="stylesheet" type="text/css"/>
         <script src="../../css/bootstrap-filestyle-1.2.1/src/bootstrap-filestyle.min.js" type="text/javascript"></script>
         <script src="../../css/sweetalert/sweetalert.min.js"></script>
@@ -71,7 +71,7 @@ if (isset($_GET['type'])) {
                         window.location = '../action/del.php?table=' + table + '&id=' + id;
                     }
                 });
-//                
+//
 //                var string = "คุณต้องการลบ " + data;
 //                var r = confirm(string + "\n" + "ออกจากระบบ?");
 //                if (r === true) {
@@ -282,7 +282,7 @@ if (isset($_GET['type'])) {
         <!--</ul>-->
         <!--</div>-->
         <div class=" col-xs-9">
-            <center>                
+            <center>
                 <?php
                 connect_database();
 
@@ -291,10 +291,10 @@ if (isset($_GET['type'])) {
 //                print_r($person);
                 ?>
                 <div class="row">
-                    <h1>รายละเอียดข้อมูลสมาชิก 
+                    <h1>รายละเอียดข้อมูลสมาชิก
                     </h1>
                 </div>
-            </center> 
+            </center>
             <div class="well">
                 <div class="row">
                     <center>
@@ -305,7 +305,7 @@ if (isset($_GET['type'])) {
                                 <a class="btn btn-primary" role="button" style="width: 175px;" onClick="javascript:window.open('../../print/edit.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">พิมพ์ข้อมูลทั้งหมด</a>
                             </div>
                             <div class="row">
-                                <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.history.back();">ย้อนกลับ</a> 
+                                <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.history.back();">ย้อนกลับ</a>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -313,21 +313,21 @@ if (isset($_GET['type'])) {
                             $picture_name = get_picture($id);
                             if ($picture_name) {
                                 ?>
-                                <img id="output" src="../../picture/<?php echo $picture_name; ?>" class="img-rounded" alt="Responsive image" width=200px height=200px > 
+                                <img id="output" src="../../picture/<?php echo $picture_name; ?>" class="img-rounded" alt="Responsive image" width=200px height=200px >
                                 <?php
                             } else {
                                 if ($person['GENDER_ID'] == 0) {
                                     ?>
-                                    <img id="output"  src="../../picture/Non.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px > 
+                                    <img id="output"  src="../../picture/Non.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px >
                                     <?php
                                 }
                                 if ($person['GENDER_ID'] == 1) {
                                     ?>
-                                    <img id="output"  src="../../picture/Male.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px > 
+                                    <img id="output"  src="../../picture/Male.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px >
                                     <?php
                                 } else if ($person['GENDER_ID'] == 2) {
                                     ?>
-                                    <img id="output"  src="../../picture/Female.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px > 
+                                    <img id="output"  src="../../picture/Female.jpg" class="img-rounded" alt="Responsive image" width=200px height=200px >
                                     <?php
                                 }
                             }
@@ -354,7 +354,7 @@ if (isset($_GET['type'])) {
                                                         <a class="btn btn-primary" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">พิมพ์ข้อมูลที่อยู่</a>
                                                     </div>-->
 
-                        </div> 
+                        </div>
                     </center>
                 </div>
                 <div class="row">
@@ -488,7 +488,7 @@ if (isset($_GET['type'])) {
                                             <div class="col-xs-4 col-xs-offset-8">
                                             <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">แก้ไขข้อมูลส่วนตัว</a>
                                             <a class="btn btn-primary" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../print/edit.php?id=<?php echo$person['ID']; ?>&page=admin', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">พิมพ์ข้อมูลทั้งหมด</a>
-                                        </div>    
+                                        </div>
                                         <div class="col-xs-4">
                                             <a class="btn btn-primary" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">พิมพ์ข้อมูลทั้งหมด</a>
                                             <a class="btn btn-material-deeporange" role="button" style="margin-top: 0px" onClick="javascript:window.open('edit_person_detail.php?id=<?php echo $id ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">แก้ไขข้อมูลส่วนตัว</a>
@@ -524,7 +524,7 @@ if (isset($_GET['type'])) {
                                 <h6>
                                     <?php
                                     echo get_addr_string($homeAddr);
-// echo $homeAddr['ADDRESS_NUM'] . ' ' . $homeAddr['ADDRESS_VILLAGE'] . ' ' . $homeAddr['ADDRESS_ALLEY'] . ' หมู่ ' . $homeAddr['ADDRESS_MOO'] . ' ' . $homeAddr['ADDRESS_ROAD'] . ' ' . get_district_string($homeAddr['ADDRESS_DISTRICT_ID']) . ' ' . get_amphur_string($homeAddr['ADDRESS_AMPHUR_ID']) . ' ' . get_province_string($homeAddr['ADDRESS_PROVINCE_ID']) . ' ' . $homeAddr['ADDRESS_ZIPCODE']; 
+// echo $homeAddr['ADDRESS_NUM'] . ' ' . $homeAddr['ADDRESS_VILLAGE'] . ' ' . $homeAddr['ADDRESS_ALLEY'] . ' หมู่ ' . $homeAddr['ADDRESS_MOO'] . ' ' . $homeAddr['ADDRESS_ROAD'] . ' ' . get_district_string($homeAddr['ADDRESS_DISTRICT_ID']) . ' ' . get_amphur_string($homeAddr['ADDRESS_AMPHUR_ID']) . ' ' . get_province_string($homeAddr['ADDRESS_PROVINCE_ID']) . ' ' . $homeAddr['ADDRESS_ZIPCODE'];
                                     ?>
                                 </h6>
                             </div>
@@ -660,7 +660,7 @@ if (isset($_GET['type'])) {
                                     echo '-';
                                 ?>
                             </h6>
-                        </div> 
+                        </div>
                         <!--                    <div class="col-xs-2">
                                                 <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">แก้ไขข้อมูลการติดต่อ</a>
                                             </div>-->
@@ -670,7 +670,7 @@ if (isset($_GET['type'])) {
                             <!--<div class="col-xs-4 col-xs-offset-8">-->
                             <!--<a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">แก้ไขข้อมูลส่วนตัว</a>-->
                             <a class="btn btn-primary" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../print/letter.php?id=<?php echo$person['ID']; ?>&page=admin', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">พิมพ์ข้อมูลที่อยู่</a>
-                        </div>    
+                        </div>
                         <div class="col-xs-4 col-xs-offset-4">
                             <!--<a class="btn btn-primary" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">พิมพ์ข้อมูลทั้งหมด</a>-->
                             <a class="btn btn-material-deeporange" role="button" style="margin-top: 0px" onClick="javascript:window.open('detail_address.php?id=<?php echo $id ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=900,height=650,top=0,left=150 ')">ดูข้อมูลการติดต่อทั้งหมด</a>
@@ -689,7 +689,7 @@ if (isset($_GET['type'])) {
                                 <h4 class="text-danger">ไม่พบข้อมูลอาชีพ กรุณากดปุ่มเพิ่มข้อมูลอาชีพ</h4>
                             </div>
                             <div class="col-xs-4">
-                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('new_organization.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลอาชีพ</a>  
+                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('new_organization.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลอาชีพ</a>
                             </div>
                         </div>
                         <?php
@@ -774,7 +774,7 @@ if (isset($_GET['type'])) {
                                                 <div class="col-sm-6">
                                                     <h6>
                                                         <?php
-                                                        echo $homeTel['CONTACT_ARER_CODE'] . '-' . $homeTel['CONTACT_STRING'];
+                                                        echo $homeTel['CONTACT_ARER_CODE'] . $homeTel['CONTACT_STRING'];
                                                         if ($homeTel['CONTACT_COMMENT'] != '')
                                                             echo " ต่อ " . $homeTel['CONTACT_COMMENT']
                                                             ?>
@@ -812,7 +812,7 @@ if (isset($_GET['type'])) {
                                                 <div class="col-sm-6">
                                                     <h6>
                                                         <?php
-                                                        echo $homeTel['CONTACT_ARER_CODE'] . '-' . $homeTel['CONTACT_STRING'];
+                                                        echo $homeTel['CONTACT_ARER_CODE'] . $homeTel['CONTACT_STRING'];
                                                         if ($homeTel['CONTACT_COMMENT'] != '')
                                                             echo " ต่อ " . $homeTel['CONTACT_COMMENT']
                                                             ?>
@@ -919,7 +919,7 @@ if (isset($_GET['type'])) {
                                 <h5 class="text-danger">ไม่พบข้อมูลมารดา กรุณากดปุ่มเพิ่มข้อมูลมารดา</h5>
                             </div>
                             <div class="col-xs-4 ">
-                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_mother_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=225,top=200,left=200 ')">เพิ่มข้อมูลมารดา</a>  
+                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_mother_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=225,top=200,left=200 ')">เพิ่มข้อมูลมารดา</a>
                             </div>
                             <?php
                         } else {
@@ -949,7 +949,7 @@ if (isset($_GET['type'])) {
                                 <h5 class="text-danger">ไม่พบข้อมูลบิดา กรุณากดปุ่มเพิ่มข้อมูลบิดา</h5>
                             </div>
                             <div class="col-xs-4 ">
-                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_parent_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=225,top=200,left=200 ')">เพิ่มข้อมูลบิดา</a>  
+                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_parent_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=225,top=200,left=200 ')">เพิ่มข้อมูลบิดา</a>
                             </div>
                             <?php
                         } else {
@@ -989,7 +989,7 @@ if (isset($_GET['type'])) {
                                 <h5 class="text-danger">ไม่พบข้อมูลพี่น้อง กรุณากดปุ่มเพิ่มข้อมูลพี่น้อง</h5>
                             </div>
                             <!--                            <div class="col-xs-4 ">
-                                                            <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_brother.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลพี่น้อง</a>  
+                                                            <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_brother.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลพี่น้อง</a>
                                                         </div>-->
                             <?php
                         } else {
@@ -1000,7 +1000,7 @@ if (isset($_GET['type'])) {
                                 <div class="row">
                                     <div class="col-xs-2">
                                         <h5><?php echo $count; ?> ชื่อ-นามสกุล</h5>
-                                    </div>    
+                                    </div>
                                     <div class="col-xs-4">
                                         <h5><?php echo get_person_title_string($brother['TITLE_ID']) . ' ' . get_person_name_string($brother['ID']) . ' ' . get_person_surname_string($brother['ID']); ?></h5>
                                     </div>
@@ -1024,7 +1024,7 @@ if (isset($_GET['type'])) {
                                     <h5 class="text-danger">ไม่พบข้อมูลพี่น้อง กรุณากดปุ่มเพิ่มข้อมูลพี่น้อง</h5>
                                 </div>
                                 <!--                            <div class="col-xs-4 ">
-                                                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_brother.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลพี่น้อง</a>  
+                                                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_brother.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลพี่น้อง</a>
                                                             </div>-->
                                 <?php
                             }
@@ -1049,7 +1049,7 @@ if (isset($_GET['type'])) {
                                         <h5 class="text-danger">ไม่พบข้อมูลบุตร-ธิดา กรุณากดปุ่มเพิ่มข้อมูลบุตร-ธิดา</h5>
                                     </div>
                                     <div class="col-xs-4 ">
-                                        <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_child_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลบุตร-ธิดา</a>  
+                                        <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_child_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลบุตร-ธิดา</a>
                                     </div>
                                 </div>
                             </center>
@@ -1063,7 +1063,7 @@ if (isset($_GET['type'])) {
                                 <div class="row">
                                     <div class="col-xs-2">
                                         <h5><?php echo $count; ?> ชื่อ-นามสกุล</h5>
-                                    </div>    
+                                    </div>
                                     <div class="col-xs-4">
                                         <h5><?php echo get_person_title_string($child['TITLE_ID']) . ' ' . get_person_name_string($child['ID']) . ' ' . get_person_surname_string($child['ID']); ?></h5>
                                     </div>
@@ -1091,7 +1091,7 @@ if (isset($_GET['type'])) {
                                     </div>
 
                                     <div class="col-xs-4 ">
-                                        <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_child.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลบุตร-ธิดา</a>  
+                                        <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_child.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูลบุตร-ธิดา</a>
                                     </div>
                                 </center>
                                 <?php
@@ -1112,7 +1112,7 @@ if (isset($_GET['type'])) {
                                 <h4 class="text-danger">ไม่พบข้อมูล กรุณาเพิ่มข้อมูลบรรพบุรุษที่จีน</h4>
                             </div>
                             <div class="col-xs-4 ">
-                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">เพิ่มข้อมูลที่อยู่บรรพบุรุษที่จีน</a>  
+                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">เพิ่มข้อมูลที่อยู่บรรพบุรุษที่จีน</a>
                             </div>
                         </div>
                         <?php
@@ -1183,10 +1183,10 @@ if (isset($_GET['type'])) {
                         </div>
                         <div class="row">
                             <div class="col-xs-4 col-xs-offset-4">
-                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('edit_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขข้อมูลที่อยู่บรรพบุรุษที่จีน</a>  
+                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('edit_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขข้อมูลที่อยู่บรรพบุรุษที่จีน</a>
                             </div>
                             <div class="col-xs-4">
-                                <a class="btn btn-danger" role="button" style="margin-top: 0px" onClick="del_chinahouse('<?php echo $id; ?>', '<?php echo get_person_title_string($person['TITLE_ID']) . ' ' . get_person_name_string($id) . " " . get_person_surname_string($id); ?>')">ลบข้อมูลที่อยู่บรรพบุรุษที่จีน</a>  
+                                <a class="btn btn-danger" role="button" style="margin-top: 0px" onClick="del_chinahouse('<?php echo $id; ?>', '<?php echo get_person_title_string($person['TITLE_ID']) . ' ' . get_person_name_string($id) . " " . get_person_surname_string($id); ?>')">ลบข้อมูลที่อยู่บรรพบุรุษที่จีน</a>
                             </div>
                         </div>
                         <?php
@@ -1204,11 +1204,11 @@ if (isset($_GET['type'])) {
                             ?>
                         </div>
                         <div class="col-xs-4 col-xs-offset-4">
-                            <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('edit_remark_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขหมายเหตุ</a>  
+                            <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('edit_remark_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขหมายเหตุ</a>
                         </div>
                     </div>
                 </fieldset>
-            </div>     
+            </div>
         </div>
     </body>
 </html>

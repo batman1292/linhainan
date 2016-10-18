@@ -223,7 +223,7 @@ if (!isset($ses_user_id)) {
                 http.onreadystatechange = function() {//Call a function when the state changes.
                     if (http.readyState == 4 && http.status == 200) {
                         var res = http.responseText.split(",");
-//                        
+//
                         document.getElementById(bday).value = res[0];
                         var sta = type + index + "_status" + res[1];
                         document.getElementById(sta).checked = true;
@@ -457,7 +457,7 @@ if (!isset($ses_user_id)) {
 
                     <div class="row">
                         <div class="col-xs-2">
-                            <img id="output" 
+                            <img id="output"
                             <?php
                             $picture_name = get_picture($id);
                             if ($picture_name) {
@@ -466,7 +466,7 @@ if (!isset($ses_user_id)) {
                                 echo 'src="../../picture/non.jpg"';
                             }
                             ?>
-                                 class="img-rounded" alt="Responsive image" width=100px height=100px > 
+                                 class="img-rounded" alt="Responsive image" width=100px height=100px >
                         </div>
                         <div class="col-xs-6" style="margin-top:0">
                             <input type="file" name="picture" id="picture" data-input="false"  class="filestyle" data-buttonText="เปลี่ยนรูปประจำตัว" accept="image/*" value="fasfs" onchange="ValidateSingleInput(this);">
@@ -528,14 +528,14 @@ if (!isset($ses_user_id)) {
                         <?php
                         $chinanames = get_person_china_name($id);
                         $chinaname = mysql_fetch_assoc($chinanames);
-//                        
+//
                         ?>
                         <div class="row">
                             <div class="col-xs-3">
                                 <h5>ชื่อจีน </h5>
                             </div>
                             <div class="col-xs-1">
-                                <h5>林 </h5> 
+                                <h5>林 </h5>
                             </div>
                             <div class="col-xs-1">
                                 <h5>- รุ่น</h5>
@@ -577,7 +577,7 @@ if (!isset($ses_user_id)) {
                                 </select>
                             </div>
                             <div class="col-xs-1">
-                                <h5>- ชื่อ</h5> 
+                                <h5>- ชื่อ</h5>
                             </div>
                             <div class="col-xs-2">
                                 <input type="text" class="form-control"autofocus id="chinaname" name="chinaname" value="<?php echo $chinaname['CHINANAME_NAME']; ?>" placeholder="ชื่อตัวอักษรจีน" readOnly="true">
@@ -588,7 +588,7 @@ if (!isset($ses_user_id)) {
                                 <h5>ออกเสียง pinyin</h5>
                             </div>
                             <div class="col-xs-1">
-                                <h5>lin </h5> 
+                                <h5>lin </h5>
                             </div>
                             <div class="col-xs-1">
                                 <h5>- รุ่น</h5>
@@ -618,7 +618,7 @@ if (!isset($ses_user_id)) {
                                 </h5>
                             </div>
                             <div class="col-xs-1">
-                                <h5>- ชื่อ</h5> 
+                                <h5>- ชื่อ</h5>
                             </div>
                             <div class="col-xs-2">
                                 <input type="text" class="form-control"autofocus id="chinaname_pinyin" name="chinaname_pinyin" value="<?php echo $chinaname['CHINANAME_PINYIN']; ?>" placeholder="ชื่อตัวเสียง pinyin" readOnly="true">
@@ -629,7 +629,7 @@ if (!isset($ses_user_id)) {
                                 <h5>ชื่อตัวสำเนียงไทย </h5>
                             </div>
                             <div class="col-xs-1">
-                                <h5>หลิน </h5> 
+                                <h5>หลิน </h5>
                             </div>
                             <div class="col-xs-1">
                                 <h5>- รุ่น</h5>
@@ -659,7 +659,7 @@ if (!isset($ses_user_id)) {
                                 </h5>
                             </div>
                             <div class="col-xs-1">
-                                <h5>- ชื่อ</h5> 
+                                <h5>- ชื่อ</h5>
                             </div>
                             <div class="col-xs-2">
                                 <input type="text" class="form-control"autofocus name="chinaname_thai" value="<?php echo $chinaname['CHINANAME_TH']; ?>" placeholder="ชื่อตัวสำเนียงไทย" readOnly="true">
@@ -732,7 +732,7 @@ if (!isset($ses_user_id)) {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-3 col-xs-offset-10">
+                            <div class="col-xs-3 col-xs-offset-8">
                                 <a class="btn btn-material-deeporange" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../admin/view/edit_person_detail.php?id=<?php echo $id ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=900,height=400,top=0,left=150 ')">แก้ไขข้อมูลส่วนตัว</a>
                             </div>
                         </div>
@@ -753,7 +753,7 @@ if (!isset($ses_user_id)) {
                                     <h6>
                                         <?php
                                         echo get_addr_string($homeAddr);
-// echo $homeAddr['ADDRESS_NUM'] . ' ' . $homeAddr['ADDRESS_VILLAGE'] . ' ' . $homeAddr['ADDRESS_ALLEY'] . ' หมู่ ' . $homeAddr['ADDRESS_MOO'] . ' ' . $homeAddr['ADDRESS_ROAD'] . ' ' . get_district_string($homeAddr['ADDRESS_DISTRICT_ID']) . ' ' . get_amphur_string($homeAddr['ADDRESS_AMPHUR_ID']) . ' ' . get_province_string($homeAddr['ADDRESS_PROVINCE_ID']) . ' ' . $homeAddr['ADDRESS_ZIPCODE']; 
+// echo $homeAddr['ADDRESS_NUM'] . ' ' . $homeAddr['ADDRESS_VILLAGE'] . ' ' . $homeAddr['ADDRESS_ALLEY'] . ' หมู่ ' . $homeAddr['ADDRESS_MOO'] . ' ' . $homeAddr['ADDRESS_ROAD'] . ' ' . get_district_string($homeAddr['ADDRESS_DISTRICT_ID']) . ' ' . get_amphur_string($homeAddr['ADDRESS_AMPHUR_ID']) . ' ' . get_province_string($homeAddr['ADDRESS_PROVINCE_ID']) . ' ' . $homeAddr['ADDRESS_ZIPCODE'];
                                         ?>
                                     </h6>
                                 </div>
@@ -832,7 +832,7 @@ if (!isset($ses_user_id)) {
                                 </div>
                                 <?php
                             }
-                            ?> 
+                            ?>
                             <?php
                             $emails = get_person_contact($id, 5);
                             $email = mysql_fetch_assoc($emails);
@@ -848,7 +848,7 @@ if (!isset($ses_user_id)) {
                                 </div>
                                 <?php
                             }
-                            ?> 
+                            ?>
                             <?php
                             $emails = get_person_contact($id, 4);
                             $email = mysql_fetch_assoc($emails);
@@ -864,10 +864,10 @@ if (!isset($ses_user_id)) {
                                 </div>
                                 <?php
                             }
-                            ?> 
+                            ?>
                         </div>
                         <div class="row">
-                            <div class="col-xs-4 col-xs-offset-10">
+                            <div class="col-xs-4 col-xs-offset-8">
                                 <a class="btn btn-material-deeporange" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../admin/view/detail_address.php?id=<?php echo $id ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=900,height=650,top=0,left=150 ')">ดูข้อมูลการติดต่อทั้งหมด</a>
                             </div>
                         </div>
@@ -952,7 +952,7 @@ if (!isset($ses_user_id)) {
                                         echo '<option value="' . $id_province . '">' . $data . '</option>';
                                     }
                                     ?>
-                                </select> 
+                                </select>
 
                             </div>
                             <div class="col-xs-2">
@@ -992,17 +992,17 @@ if (!isset($ses_user_id)) {
 //                            $email = mysql_fetch_assoc($emails);
 //                            if ($email) {
 ////                                echo $email['CONTACT_STRING'];
-//                                
+//
                                 ?>
-                                    <!--<input type="email" class="form-control" autofocus name="email" value="//<?php // echo $email['CONTACT_STRING'];                                                                          ?>">-->    
+                                    <!--<input type="email" class="form-control" autofocus name="email" value="//<?php // echo $email['CONTACT_STRING'];                                                                          ?>">-->
                                 <?php
 //                            } else {
-//                                
+//
                                 ?>
-                                <!--<input type="email" class="form-control" autofocus name="email" value="">-->    
+                                <!--<input type="email" class="form-control" autofocus name="email" value="">-->
                                 <?php
 //                            }
-//                            
+//
                                 ?>
                                 <input type="email" class="form-control" autofocus name="email" value="">
                             </div>
@@ -1015,12 +1015,12 @@ if (!isset($ses_user_id)) {
 //                            $fb = mysql_fetch_assoc($fbs);
 //                            if ($fb) {
 ////                                echo $fb['CONTACT_STRING'];
-//                                
+//
                                 ?>
                                     <!--<input type="text" class="form-control" autofocus name="facebook" value="//<?php // echo $fb['CONTACT_STRING'];                                                                          ?>">-->
                                 <?php
 //                            } else {
-//                                
+//
                                 ?>
                                 <!--<input type="text" class="form-control" autofocus name="facebook" value="">-->
                                 <?php
@@ -1037,12 +1037,12 @@ if (!isset($ses_user_id)) {
 //                            $line = mysql_fetch_assoc($lines);
 //                            if ($line) {
 ////                                echo $fb['CONTACT_STRING'];
-//                                
+//
                                 ?>
                                     <!--<input type="text" class="form-control" autofocus name="line" value="//<?php // echo $line['CONTACT_STRING'];                                                                         ?>">-->
                                 <?php
 //                            } else {
-//                                
+//
                                 ?>
                                 <!--<input type="text" class="form-control" autofocus name="line" value="">-->
                                 <?php
@@ -1373,10 +1373,10 @@ if (!isset($ses_user_id)) {
                                                         <h4>ตำบล</h4>
                                                     </div>
                                                     <div class="col-xs-3" style="margin-top: 5px">
-                            
+
                                                         <select name="organization_district" class="organization_district form-control" placeholder="Your favorite pastry">>
                                                             <option selected="selected">เลือกอำเภอก่อน</option>
-                            
+
                                                         </select>
                                                     </div>-->
                             <div class="col-xs-1">
@@ -1385,7 +1385,7 @@ if (!isset($ses_user_id)) {
                             <div class="col-xs-3" style="margin-top: 5px">
                                 <select name="organization_amphur" class="organization_amphur form-control" placeholder="Your favorite pastry">>
                                     <option selected="selected">เลือกจังหวัดก่อน</option>
-                                </select> 
+                                </select>
                             </div>
                             <div class="col-xs-1">
                                 <h5>จังหวัด</h5>
@@ -1402,7 +1402,7 @@ if (!isset($ses_user_id)) {
                                         echo '<option value="' . $id_province . '">' . $data . '</option>';
                                     }
                                     ?>
-                                </select> 
+                                </select>
 
                             </div>
                             <div class="col-xs-2">
@@ -1501,7 +1501,7 @@ if (!isset($ses_user_id)) {
                                     <input type="text" list="list_mother" class="mother_list form-control" name="mother" />
                                     <datalist id="list_mother" class="list_mother">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-1 col-xs-offset-1">
                                     <h5>สถานะ</h5>
@@ -1509,7 +1509,7 @@ if (!isset($ses_user_id)) {
                                 <div class="col-xs-3" style="margin-top: 5px;">
                                     <input type="radio" name="mother_status" value="1" >ยังมีชีวิตอยู่
                                     <input type="radio" name="mother_status" value="2" >เสียชีวิต
-                                </div>    
+                                </div>
                                 <?php
                             }
                             ?>
@@ -1544,7 +1544,7 @@ if (!isset($ses_user_id)) {
                                     <input type="text" list="list_parent" class="parent_list form-control" name="parent" />
                                     <datalist id="list_parent" class="list_parent">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-1 col-xs-offset-1">
                                     <h5>สถานะ</h5>
@@ -1552,7 +1552,7 @@ if (!isset($ses_user_id)) {
                                 <div class="col-xs-3" style="margin-top: 5px;">
                                     <input type="radio" name="parent_status" value="1" >ยังมีชีวิตอยู่
                                     <input type="radio" name="parent_status" value="2" >เสียชีวิต
-                                </div>    
+                                </div>
                                 <?php
                             }
                             ?>
@@ -1670,7 +1670,7 @@ if (!isset($ses_user_id)) {
                                                 ?>
                                             </div>
                                             <div class="col-xs-2">
-                                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../admin/view/edit_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขข้อมูลที่อยู่บรรพบุรุษที่จีน</a>  
+                                                <a class="btn btn-material-orange" role="button" style="margin-top: 0px" onClick="javascript:window.open('../../admin/view/edit_chinahouse_form.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=350,top=150,left=150 ')">แก้ไขข้อมูลที่อยู่บรรพบุรุษที่จีน</a>
                                             </div>
                                         </div>
                                         <?php
@@ -1857,7 +1857,7 @@ if (!isset($ses_user_id)) {
                                                 echo "ไม่ระบุ";
                                             }
                                             ?>
-                                        </div>  
+                                        </div>
                                         <div class="col-xs-1" style="margin-top: 7px;">
                                             <a role="button" style="margin-top: 0px" onClick="javascript:window.open('../../admin/view/edit_person_detail.php?id=<?php echo $brother['ID'] ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=900,height=400,top=0,left=150 ')">แก้ไขข้อมูล</a>
                                         </div>
@@ -1869,7 +1869,7 @@ if (!isset($ses_user_id)) {
                                     ?>
                                     <div class="col-xs-6 col-xs-offset-4">
                                         <h4 class="text-danger">ไม่พบข้อมูลพี่น้อง</h4>
-                                    </div>    
+                                    </div>
                                     <?php
                                 }
                                 ?>
@@ -1898,7 +1898,7 @@ if (!isset($ses_user_id)) {
                                     <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="" onkeypress="nextbro(this);" onkeyup="get_listData(this);" onchange="get_personData(this);">
                                     <datalist id="list_bro1" class="list_bro1">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-2">
                                     <h5>วันเกิด(ค.ศ.)</h5>
@@ -1976,7 +1976,7 @@ if (!isset($ses_user_id)) {
                                     ?>
                                     <div class="col-xs-6 col-xs-offset-4">
                                         <h4 class="text-danger">ไม่พบข้อมูลพี่น้อง</h4>
-                                    </div>    
+                                    </div>
                                     <?php
                                 }
                                 ?>
@@ -2004,7 +2004,7 @@ if (!isset($ses_user_id)) {
                                     <input type="text" class="namechild1 form-control" list="list_child1" autofocus name="namechild1" value="" onkeypress="nextchild(this);" onkeyup="get_listData(this);" onchange="get_personData(this);">
                                     <datalist id="list_child1" class="list_child1">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-2">
                                     <h5>วันเกิด(ค.ศ.)</h5>
@@ -2042,15 +2042,15 @@ if (!isset($ses_user_id)) {
                         <input type="text" class="form-control" autofocus name="REMARK" list="remark_list" value="<?php echo get_remark($id) ?>">
                         <datalist id="remark_list" class="remark_list">
                             <?php echo get_remark_list(); ?>
-                        </datalist> 
+                        </datalist>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 0px">
-                    <div class="col-xs-2" style="margin-top:10">
+                    <div class="col-xs-2" style="margin-top:0">
                         <a class="btn btn-danger" role="button" onClick="del('<?php echo get_person_name_string($id) . " " . get_person_surname_string($id); ?>', '<?php echo $id; ?>')">ลบข้อมูล</a>
                     </div>
 
-                    <div class="col-xs-2 col-xs-offset-2">
+                    <div class="col-xs-2 col-xs-offset-4">
                         <a class="btn btn-danger" role="button" onClick="javascript
                                 :window.close()">ยกเลิก</a>
                     </div>

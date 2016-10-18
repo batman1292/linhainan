@@ -221,7 +221,7 @@ if (!isset($ses_user_id)) {
                 http.onreadystatechange = function() {//Call a function when the state changes.
                     if (http.readyState == 4 && http.status == 200) {
                         var res = http.responseText.split(",");
-//                        
+//
                         document.getElementById(bday).value = res[0];
                         var sta = type + index + "_status" + res[1];
                         document.getElementById(sta).checked = true;
@@ -451,7 +451,7 @@ if (!isset($ses_user_id)) {
                     </div>
                     <div class="row">
                         <div class="col-xs-2">
-                            <img id="output" src="../../picture/non.jpg" class="img-rounded" alt="Responsive image" width=100px height=100px > 
+                            <img id="output" src="../../picture/non.jpg" class="img-rounded" alt="Responsive image" width=100px height=100px >
                         </div>
                         <div class="col-xs-5" style="margin-top:0">
                             <input type="file" name="picture" id="picture" data-input="false"  class="filestyle" data-buttonText="เปลี่ยนรูปประจำตัว" accept="image/*" value="fasfs" onchange="ValidateSingleInput(this);">
@@ -509,7 +509,7 @@ if (!isset($ses_user_id)) {
                             <h5>ชื่อจีน </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>林</h5> 
+                            <h5>林</h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
@@ -536,7 +536,7 @@ if (!isset($ses_user_id)) {
                             </select>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus id="chinaname" name="chinaname" value="" placeholder="ชื่อตัวอักษรจีน">
@@ -547,7 +547,7 @@ if (!isset($ses_user_id)) {
                             <h5>ออกเสียง pinyin</h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>lin </h5> 
+                            <h5>lin </h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
@@ -556,7 +556,7 @@ if (!isset($ses_user_id)) {
                             <h5 id="gen_pinyin"></h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus id="chinaname_pinyin" name="chinaname_pinyin" value="" placeholder="ชื่อตัวเสียง pinyin">
@@ -567,7 +567,7 @@ if (!isset($ses_user_id)) {
                             <h5>ชื่อตัวสำเนียงไทย </h5>
                         </div>
                         <div class="col-xs-1" >
-                            <h5>หลิน </h5> 
+                            <h5>หลิน </h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
@@ -576,7 +576,7 @@ if (!isset($ses_user_id)) {
                             <h5 id="gen_th">   </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus name="chinaname_thai" value="" placeholder="ชื่อตัวสำเนียงไทย">
@@ -682,10 +682,10 @@ if (!isset($ses_user_id)) {
                                                     <h4>ตำบล</h4>
                                                 </div>
                                                 <div class="col-xs-4" style="margin-top: 5px">
-                        
+
                                                     <select name="addr_district" class="district form-control" placeholder="Your favorite pastry">>
                                                         <option selected="selected">เลือกอำเภอก่อน</option>
-                        
+
                                                     </select>
                                                 </div>-->
                         <div class="col-xs-1">
@@ -694,7 +694,7 @@ if (!isset($ses_user_id)) {
                         <div class="col-xs-3" style="margin-top: 5px">
                             <select name="addr_amphur" class="amphur form-control" placeholder="Your favorite pastry">>
                                 <option selected="selected">เลือกจังหวัดก่อน</option>
-                            </select> 
+                            </select>
                         </div>
                         <div class="col-xs-1">
                             <h5>จังหวัด</h5>
@@ -711,7 +711,7 @@ if (!isset($ses_user_id)) {
                                     echo '<option value="' . $id . '">' . $data . '</option>';
                                 }
                                 ?>
-                            </select> 
+                            </select>
 
                         </div>
                         <div class="col-xs-2">
@@ -865,10 +865,10 @@ if (!isset($ses_user_id)) {
                                                     <h4>ตำบล</h4>
                                                 </div>
                                                 <div class="col-xs-3" style="margin-top: 5px">
-                        
+
                                                     <select name="organization_district" class="organization_district form-control" placeholder="Your favorite pastry">>
                                                         <option selected="selected">เลือกอำเภอก่อน</option>
-                        
+
                                                     </select>
                                                 </div>-->
                         <div class="col-xs-1">
@@ -877,7 +877,7 @@ if (!isset($ses_user_id)) {
                         <div class="col-xs-3" style="margin-top: 5px">
                             <select name="organization_amphur" class="organization_amphur form-control" placeholder="Your favorite pastry">>
                                 <option selected="selected">เลือกจังหวัดก่อน</option>
-                            </select> 
+                            </select>
                         </div>
                         <div class="col-xs-1">
                             <h5>จังหวัด</h5>
@@ -894,7 +894,7 @@ if (!isset($ses_user_id)) {
                                     echo '<option value="' . $id . '">' . $data . '</option>';
                                 }
                                 ?>
-                            </select> 
+                            </select>
 
                         </div>
                         <div class="col-xs-2">
@@ -946,7 +946,7 @@ if (!isset($ses_user_id)) {
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <h4>3.ครอบครัว</h4> 
+                            <h4>3.ครอบครัว</h4>
                         </div>
                     </div>
 
@@ -958,7 +958,7 @@ if (!isset($ses_user_id)) {
                             <input type="text" list="list_mother" class="mother_list form-control" name="mother" id="mother" />
                             <datalist id="list_mother" class="list_mother">
 
-                            </datalist> 
+                            </datalist>
                         </div>
                         <div class="col-xs-1 col-xs-offset-1">
                             <h5>สถานะ</h5>
@@ -976,7 +976,7 @@ if (!isset($ses_user_id)) {
                             <input type="text" list="list_parent" class="parent_list form-control" name="parent" />
                             <datalist id="list_parent" class="list_parent">
 
-                            </datalist> 
+                            </datalist>
                         </div>
                         <div class="col-xs-1 col-xs-offset-1">
                             <h5>สถานะ</h5>
@@ -1076,7 +1076,7 @@ if (!isset($ses_user_id)) {
                         <div class="col-xs-12" ><h4>5. ชื่อนามสกุล ของพี่-น้องร่วมบิดา-มารดาเดียวกัน</h4></div>
                     </div>
                     <input type="text" name="count_bro" id="count_bro" value="0" hidden="">
-                    <div class="brother" id="brother"> 
+                    <div class="brother" id="brother">
                         <div class="row">
                             <div class="col-xs-3">
                                 <h5>1.ชื่อนามสกุล</h5>
@@ -1085,7 +1085,7 @@ if (!isset($ses_user_id)) {
                                 <input type="text" class="namebro form-control" list="list_bro1" autofocus name="namebro1" value="" onkeypress="nextbro(this);" onkeyup="get_listData(this);" onchange="get_personData(this);">
                                 <datalist id="list_bro1" class="list_bro" >
 
-                                </datalist> 
+                                </datalist>
                             </div>
                             <div class="col-xs-2">
                                 <h5>วันเกิด(ค.ศ.)</h5>
@@ -1118,7 +1118,7 @@ if (!isset($ses_user_id)) {
                                 <input type="text" class="namechild form-control" list="list_child1" autofocus name="namechild1" value="" onkeypress="nextchild(this);" onkeyup="get_listData(this);" onchange="get_personData(this);">
                                 <datalist id="list_child1" class="list_child1">
 
-                                </datalist> 
+                                </datalist>
                             </div>
                             <div class="col-xs-2">
                                 <h5>วันเกิด(ค.ศ.)</h5>
@@ -1155,10 +1155,10 @@ if (!isset($ses_user_id)) {
                             <input type="text" class="form-control" autofocus name="REMARK" list="remark_list" value="<?php echo get_remark($id) ?>">
                             <datalist id="remark_list" class="remark_list">
                                 <?php echo get_remark_list(); ?>
-                            </datalist> 
+                            </datalist>
                         </div>
                     </div>
-                    <div class="col-xs-2 col-xs-offset-2">
+                    <div class="col-xs-2 col-xs-offset-6">
                         <a class="btn btn-danger" role="button" onClick="javascript
                                 :window.close()">ยกเลิก</a>
                     </div>

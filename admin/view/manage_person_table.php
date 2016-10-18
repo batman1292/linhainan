@@ -16,8 +16,8 @@ if ($ses_user_id == "") {
         <link href=../../"css/bootstrap-material-design-master/dist/css/material.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap-material-design-master/dist/css/material-wfont.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/tooltips/tooltips.css" rel="stylesheet" type="text/css"/>
-        <link href="../../css/loading.css" rel="stylesheet" type="text/css"/> 
-        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script> 
+        <link href="../../css/loading.css" rel="stylesheet" type="text/css"/>
+        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="../../css/sweetalert/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../../css/sweetalert/sweetalert.css">
         <link href="../../css/menu.css" rel="stylesheet" type="text/css"/>
@@ -128,7 +128,7 @@ if ($ses_user_id == "") {
                                         ?>
                                     </select>
                                 </div>
-                                <div class="col-xs-5 col-xs-offset-1">
+                                <div class="col-xs-4 col-xs-offset-2">
                                     <input type="text" class="form-control" placeholder="กรอกข้อมูลที่ต้องการค้นหา" required autofocus name="data" id="data">
                                 </div>
                                 <div class="col-xs-3">
@@ -193,7 +193,7 @@ if ($ses_user_id == "") {
                                 <div class="col-xs-2 col-xs-offset-10">
                                     <a class="btn btn-material-orange" style="color: white" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูล</a>
                                 </div>
-                                
+
                                 <div class="col-xs-3">
 
                                 </div>
@@ -212,6 +212,7 @@ if ($ses_user_id == "") {
                 if (isset($_GET['search'])) {
                     $data = $_GET['data'];
                     $search_type = $_GET['option'];
+                    // echo search_data($data, $search_type);
                     $check = mysql_fetch_assoc(mysql_query(search_data($data, $search_type)));
                     if (!$check) {
                         echo "<script type='text/javascript'>";
@@ -269,7 +270,7 @@ if ($ses_user_id == "") {
                                                 <?php
                                                 if ($person['CHINANAME_ID'] == 0) {
                                                     ?>
-                                                    <a style="color:white" class="mdi-action-spellcheck" onClick="check('<?php echo $id; ?>', '<?php echo get_person_name_string($id) . " " . get_person_surname_string($id); ?>')">สร้างชื่อจีน</a>    
+                                                    <a style="color:white" class="mdi-action-spellcheck" onClick="check('<?php echo $id; ?>', '<?php echo get_person_name_string($id) . " " . get_person_surname_string($id); ?>')">สร้างชื่อจีน</a>
                 <?php
             } else {
                 echo get_person_china_full_name($id, 0);
@@ -316,7 +317,7 @@ if ($ses_user_id == "") {
 }
 ?>
         </div>
-    </center>            
+    </center>
 </div>
 </body>
 </html>

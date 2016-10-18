@@ -527,12 +527,12 @@ function get_chinahouse_id($chinahouse, $chinahouse_th) {
             while ($row = mysql_fetch_assoc($res)) {
                 $chinahouse_id = $row['ID'];
             }
-	    
+
         }
     }
-		$sql = "UPDATE `china` SET `CHINA_STR`='$chinahouse' , `CHINA_TH`='$chinahouse_th' WHERE ID=$chinahouse_id";            
+		$sql = "UPDATE `china` SET `CHINA_STR`='$chinahouse' , `CHINA_TH`='$chinahouse_th' WHERE ID=$chinahouse_id";
 		mysql_query($sql);
-		
+
     	return $chinahouse_id;
 }
 
@@ -1126,7 +1126,7 @@ function edit_organization_address($data_id, $num, $village, $alley, $moo, $road
 
 function edit_organization($data_id, $org_id, $org_name, $org_type, $org_comment) {
     $time = date('Y-m-d H:i:s', time());
-//    echo 
+//    echo
     $query = "SELECT * FROM organization WHERE ORGANIZATION_NAME = '$org_name' AND ORGANIZATION_TYPE_ID = $org_type AND ORGANIZATION_COMMENT = '$org_comment'";
     echo $query;
     $res = mysql_query($query);
@@ -1453,12 +1453,12 @@ function search_data($data, $type) {
     } else if ($type == 2) {
 //        echo strlen($data);
         if (strlen($data) == 3) {
-            $query = "SELECT person.ID FROM person LEFT JOIN personname ON personname.PERSONNAME_OWNER_ID = person.ID "
+            $query = "SELECT person.ID FROM person "
                     . "LEFT JOIN chinaname ON person.CHINANAME_ID = chinaname.ID "
                     . "LEFT JOIN generation ON person.GENERATION_ID = generation.ID  "
                     . "WHERE chinaname.CHINANAME_NAME LIKE '%$data%' OR chinaname.CHINANAME_PINYIN LIKE '%$data%' OR chinaname.CHINANAME_TH LIKE '%$data%' OR "
-                    . "generation.GENERATION_NAME LIKE '%$data%' OR generation.GENERATION_PINYIN LIKE '%$data%' OR generation.GENERATION_TH LIKE '%$data%' ORDER BY PERSONNAME_NAME ";
-//            echo $query;  
+                    . "generation.GENERATION_NAME LIKE '%$data%' OR generation.GENERATION_PINYIN LIKE '%$data%' OR generation.GENERATION_TH LIKE '%$data%' ORDER BY  person.ID  ";
+//            echo $query;
         } else if (strlen($data) == 6) {
             $gen = substr($data, 0, 3);
             $name = substr($data, 3, 6);
@@ -1618,7 +1618,7 @@ function search_data_parent($data, $type, $id) {
                     . "LEFT JOIN generation ON person.GENERATION_ID = generation.ID  "
                     . "WHERE chinaname.CHINANAME_NAME LIKE '%$data%' OR chinaname.CHINANAME_PINYIN LIKE '%$data%' OR chinaname.CHINANAME_TH LIKE '%$data%' OR "
                     . "generation.GENERATION_NAME LIKE '%$data%' OR generation.GENERATION_PINYIN LIKE '%$data%' OR generation.GENERATION_TH LIKE '%$data%' AND person.ID != $id ORDER BY PERSONNAME_NAME ";
-//            echo $query;  
+//            echo $query;
         } else if (strlen($data) == 6) {
             $gen = substr($data, 0, 3);
             $name = substr($data, 3, 6);
@@ -1711,7 +1711,7 @@ function search_ancestorsaddr($data, $type) {
                     . "LEFT JOIN generation ON person.GENERATION_ID = generation.ID  "
                     . "WHERE chinaname.CHINANAME_NAME LIKE '%$data%' OR chinaname.CHINANAME_PINYIN LIKE '%$data%' OR chinaname.CHINANAME_TH LIKE '%$data%' OR "
                     . "generation.GENERATION_NAME LIKE '%$data%' OR generation.GENERATION_PINYIN LIKE '%$data%' OR generation.GENERATION_TH LIKE '%$data%' ORDER BY PERSONNAME_NAME ";
-//            echo $query;  
+//            echo $query;
         } else if (strlen($data) == 6) {
             $gen = substr($data, 0, 3);
             $name = substr($data, 3, 6);

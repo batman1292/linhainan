@@ -74,7 +74,7 @@ $id = $_GET['id'];
     <body class="btn-danger">
         <!--<div class="container">-->
         <div class=" col-sm-12">
-            <center>                
+            <center>
                 <?php
                 include '../../helper/db_connect.php';
                 include '../../helper/helper.php';
@@ -84,9 +84,26 @@ $id = $_GET['id'];
                 $persons = get_person_detial($id);
                 $person = mysql_fetch_assoc($persons);
 //                print_r($person);
+                if($person["GENERATION_ID"] == 0){
+                  if($person["PARENT_ID"] != 0){
+                    $parents = get_person_detial($person["PARENT_ID"]);
+                    $parent = mysql_fetch_assoc($parents);
+                    if($parent["GENERATION_ID"] != 0){
+                      $person["GENERATION_ID"] = $parent["GENERATION_ID"]+1;
+                      // echo $person["GENERATION_ID"];
+                    }
+                  }else if($person["MOTHER_ID"] != 0){
+                    $mothers = get_person_detial($person["MOTHER_ID"]);
+                    $mother = mysql_fetch_assoc($mothers);
+                    if($mother["GENERATION_ID"] != 0){
+                      $person["GENERATION_ID"] = $mother["GENERATION_ID"]+1;
+                      // echo $person["GENERATION_ID"];
+                    }
+                  }
+                }
                 ?>
                 <div class="row">
-                    <h1>แก้ไขข้อมูลส่วนตัว 
+                    <h1>แก้ไขข้อมูลส่วนตัว
                         <?php
 //if($person['TITLE_ID'] != 0)
 //                            echo get_person_title_string($person['TITLE_ID']) . ' ' . $person['NAME'] . '  ' . $person['SURNAME'];
@@ -95,7 +112,7 @@ $id = $_GET['id'];
                         ?>
                     </h1>
                 </div>
-            </center> 
+            </center>
             <div class="well">
                 <form  action="../action/edit_person.php" method="Post" style="margin:10 10 10 10" enctype="multipart/form-data">
                     <div class="row">
@@ -137,14 +154,14 @@ $id = $_GET['id'];
                     <?php
                     $chinanames = get_person_china_name($id);
                     $chinaname = mysql_fetch_assoc($chinanames);
-//                        
+//
                     ?>
                     <div class="row">
                         <div class="col-xs-3">
                             <h5>ชื่อจีน </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>林 </h5> 
+                            <h5>林 </h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
@@ -186,7 +203,7 @@ $id = $_GET['id'];
                             </select>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus id="chinaname" name="chinaname" value="<?php echo $chinaname['CHINANAME_NAME']; ?>" placeholder="ชื่อตัวอักษรจีน">
@@ -197,13 +214,13 @@ $id = $_GET['id'];
                             <h5>ออกเสียง pinyin</h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>lin </h5> 
+                            <h5>lin </h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
                         </div>
                         <div class="col-xs-3" >
-                            <h5 id="gen_pinyin"> 
+                            <h5 id="gen_pinyin">
                                 <?php
                                 $sql = get_gen_by_type(1);
                                 while ($rs = mysql_fetch_array($sql)) {
@@ -227,7 +244,7 @@ $id = $_GET['id'];
                             </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus id="chinaname_pinyin" name="chinaname_pinyin" value="<?php echo $chinaname['CHINANAME_PINYIN']; ?>" placeholder="ชื่อตัวเสียง pinyin">
@@ -238,7 +255,7 @@ $id = $_GET['id'];
                             <h5>ชื่อตัวสำเนียงไทย </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>หลิน </h5> 
+                            <h5>หลิน </h5>
                         </div>
                         <div class="col-xs-1">
                             <h5>- รุ่น</h5>
@@ -268,7 +285,7 @@ $id = $_GET['id'];
                             </h5>
                         </div>
                         <div class="col-xs-1">
-                            <h5>- ชื่อ</h5> 
+                            <h5>- ชื่อ</h5>
                         </div>
                         <div class="col-xs-2">
                             <input type="text" class="form-control"autofocus name="chinaname_thai" value="<?php echo $chinaname['CHINANAME_TH']; ?>" placeholder="ชื่อตัวสำเนียงไทย">
@@ -343,7 +360,7 @@ $id = $_GET['id'];
                     <div class="row">
                         <div class="col-sm-2">
                             <button class="btn btn-success" type="submit" name="search">บันทึก</button>
-                        </div>    
+                        </div>
                     </div>
                 </form>
             </div>
