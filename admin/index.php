@@ -24,7 +24,7 @@
             }
             function show_stat(tab) {
                 for (x in tabs) {
-//                    console.log(x);
+                  //  console.log(x);
                     document.getElementById(tabs[x]).style.display = "none";
                 }
                 document.getElementById(tab).style.display = "";
@@ -39,6 +39,14 @@
     }
     include '../helper/db_connect.php';
     connect_database();
+    if(isset($_GET['tab'])){
+      $tab = $_GET['tab'];
+      ?>
+      <script type="text/javascript">
+        show_stat('<?php echo $tab; ?>')
+      </script>
+      <?php
+    }
     ?>
     <body class="btn-danger">
         <!--<div class="container">-->
@@ -63,7 +71,7 @@
                                 <ul class="dropdown-menu">
                                     <li><h4><a onclick="show_stat('stat')"> สถิติ</a></h4></li>
                                     <li><h4><a onclick="show_stat('provice')">สมาชิกที่อยู่แต่ละจังหวัด</a></h4></li>
-                                    <li><h4><a onclick="show_stat('gen')">จำนวนแต่ละลำดับรุ่น</a></h4></li> 
+                                    <li><h4><a onclick="show_stat('gen')">จำนวนแต่ละลำดับรุ่น</a></h4></li>
                                 </ul>
                             </h4>
                         </li>
@@ -76,7 +84,7 @@
                         <li><h4><a href="view/serach_family_tree.php" class="mdi-social-people" style="color:white"> Family Tree</a></h4></li>
                         <li><h4><a href="view/export_sql.php" class="mdi-action-backup"</h4></li>
                         <li>&nbsp;</li>
-        
+
                     </ul>
                 </div>-->
         <ul id="sidebar" class=" col-xs-3 nav nav-pills nav-stacked" style="max-width: 400px;">
@@ -84,7 +92,7 @@
             <ul>
                 <li><h4><a onclick="show_stat('stat')" style="color: white"> สถิติ</a></h4></li>
                 <li><h4><a onclick="show_stat('provice')" style="color: white" >สมาชิกที่อยู่แต่ละจังหวัด</a></h4></li>
-                <li><h4><a onclick="show_stat('gen')" style="color: white" >จำนวนแต่ละลำดับรุ่น</a></h4></li> 
+                <li><h4><a onclick="show_stat('gen')" style="color: white" >จำนวนแต่ละลำดับรุ่น</a></h4></li>
             </ul>
             <li><a href="view/manage_person_table.php" style="color: white"><span class="glyphicon glyphicon-user" style="font-size:130%;"> ทะเบียนฐานข้อมูลสมาชิก</a></span>  </li>
             <li><a href="view/export_excel.php" style="color: white"><span class="glyphicon glyphicon-export" style="font-size:130%;"> Export Excel</a></span> </li>
@@ -104,10 +112,10 @@
                 <div class="row" id="stat" style="display :<?php
                 if (isset($_GET['tab'])) {
                     if ($_GET['tab'] != "stat") {
-                        echo "none";
+                        // echo "none";
                     }
                 } else {
-                    echo "none";
+                    // echo "none";
                 }
                 ?> ">
                     <div class="col-xs-10 col-xs-offset-1">
@@ -124,14 +132,14 @@
                                     <td style='text-align:right'>
                                         <h3>
                                             <?php
-                                            $results = count_person_by_status(1);
+                                            $results = count_all_person_detial();
                                             while ($result = mysql_fetch_row($results)) {
 //                                                echo $result[0];
                                                 ?>
                                                 <a style="color: white;" onClick="javascript:window.location.assign('view/stat_detail.php?data=1&type=all')"><?php echo $result[0]; ?></a>
                                                 <?php
                                             }
-                                            ?>  
+                                            ?>
                                         </h3>
                                     </td>
                                 </tr>
@@ -147,7 +155,7 @@
                                                 <a style="color: white;" onClick="javascript:window.location.assign('view/stat_detail.php?data=1&type=live')"><?php echo $result[0]; ?></a>
                                                 <?php
                                             }
-                                            ?>  
+                                            ?>
                                         </h3>
                                     </td>
                                 </tr>
@@ -227,7 +235,7 @@
 //                                    $counts = count_person_by_provice_id($i);
 //                                    $count = mysql_fetch_row($counts);
 //                                    if ($count[0] != 0) {
-//                                        
+//
                                 ?>
 <!--                                        <tr>
                                             <td><h3>//<?php echo get_province_string($i); ?></h3></td>
@@ -347,7 +355,7 @@
                                             <td>
                                                 <!--<a style="color: white;" class="mdi-action-find-in-page"onClick="javascript:window.location.assign('view/view_gen.php?gen_id=////<?php //  echo $gen_id;                                             ?>')">view</a>-->
                                             </td>
-                                        </tr>    
+                                        </tr>
                                         <?php
                                     }
 //                                    }
@@ -396,7 +404,7 @@
                                         <td>
                                             <!--<a style="color: white;" class="mdi-action-find-in-page"onClick="javascript:window.location.assign('view/view_gen.php?gen_id=////<?php //  echo $gen_id;                                             ?>')">view</a>-->
                                         </td>
-                                    </tr>    
+                                    </tr>
                                     <?php
                                 }
 //                                }
@@ -408,4 +416,14 @@
         </div>
         <!--</div>-->
     </body>
+    <?php
+    if(isset($_GET['tab'])){
+      $tab = $_GET['tab'];
+      ?>
+      <script type="text/javascript">
+        show_stat('<?php echo $tab; ?>')
+      </script>
+      <?php
+    }
+    ?>
 </html>

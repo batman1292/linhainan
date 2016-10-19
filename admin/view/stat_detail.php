@@ -11,6 +11,18 @@
         <link href="../../css/fieldset.css" rel="stylesheet" type="text/css"/>
         <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>
         <link href="../../css/menu.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+        var tabs = ["stat", "provice", "gen"];
+        function show_stat(tab) {
+            // for (x in tabs) {
+            //            console.log(x);
+            //     // document.getElementById(tabs[x]).style.display = "none";
+            // }
+            // document.getElementById(tab).style.display = "";
+            window.location.href = "../index.php?tab="+tab;
+            console.log("dkdk");
+        }
+        </script>
     </head>
     <?php
     session_start();
@@ -42,7 +54,7 @@
 //        echo $results;
         $headder_str = "รายละเอียดข้อมูลสมาชิกที่ไม่ทราบสถานะมีชืวิต หรือ เสียชีวิต";
     } else if ($_GET['type'] == 'all') {
-        $results = "SELECT * FROM person LEFT JOIN personname ON personname.PERSONNAME_OWNER_ID = person.ID ORDER BY PERSONNAME_NAME ";
+        $results = "SELECT * FROM person LEFT JOIN personname ON personname.PERSONNAME_OWNER_ID = person.ID WHERE personname.PERSONNAME_NAME != '' ORDER BY PERSONNAME_NAME ";
 //        echo $results;
         $headder_str = "รายละเอียดข้อมูลสมาชิกทั้งหมด";
     } else if ($_GET['type'] == 'sector') {
@@ -98,7 +110,7 @@
             <ul>
                 <li><h4><a onclick="show_stat('stat')" style="color: white"> สถิติ</a></h4></li>
                 <li><h4><a onclick="show_stat('provice')" style="color: white" >สมาชิกที่อยู่แต่ละจังหวัด</a></h4></li>
-                <li><h4><a onclick="show_stat('gen')" style="color: white" >จำนวนแต่ละลำดับรุ่น</a></h4></li> 
+                <li><h4><a onclick="show_stat('gen')" style="color: white" >จำนวนแต่ละลำดับรุ่น</a></h4></li>
             </ul>
             <li><a href="manage_person_table.php" style="color: white"><span class="glyphicon glyphicon-user" style="font-size:130%;"> ทะเบียนฐานข้อมูลสมาชิก</a></span>  </li>
             <li><a href="export_excel.php" style="color: white"><span class="glyphicon glyphicon-export" style="font-size:130%;"> Export Excel</a></span> </li>
@@ -226,7 +238,7 @@
                                                     <td>
                                                         <!--<a style="color: white;" class="mdi-action-find-in-page"onClick="javascript:window.location.assign('view/view_gen.php?gen_id=////<?php //  echo $gen_id;                            ?>')">view</a>-->
                                                     </td>
-                                                </tr>    
+                                                </tr>
                                                 <?php
                                             } else {
                                                 ?>
@@ -238,7 +250,7 @@
                                                     <td>
                                                         <!--<a style="color: white;" class="mdi-action-find-in-page"onClick="javascript:window.location.assign('view/view_gen.php?gen_id=////<?php //  echo $gen_id;                            ?>')">view</a>-->
                                                     </td>
-                                                </tr>    
+                                                </tr>
                                                 <?php
                                             }
                                             $count++;
@@ -271,7 +283,7 @@
                     }
                     ?>
                     <div class="row">
-                        <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.history.back();">ย้อนกลับ</a> 
+                        <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.history.back();">ย้อนกลับ</a>
                     </div>
                 </div>
             </center>
