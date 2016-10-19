@@ -10,7 +10,7 @@ if ($ses_user_id == "") {
     <head>
         <meta charset="utf-8">
         <script src="../../helper/jquery-latest.js" type="text/javascript"></script>
-        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>  
+        <script src="../../helper/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="../../css/sweetalert/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../../css/sweetalert/sweetalert.css">
         <script type='text/javascript'>
@@ -83,12 +83,12 @@ if ($ses_user_id == "") {
                     'showCancelButton: true,' .
                     'confirmButtonColor: "#DD6B55",' .
                     'confirmButtonText: "สร้างชื่อจีนโดยไม่ทราบรุ่นบิดา",' .
-                    'cancelButtonText: "สร้างชื่อจีนจากรุ่นบิดา",' .
+                    // 'cancelButtonText: "สร้างชื่อจีนจากรุ่นบิดา",' .
                     'closeOnConfirm: false, closeOnCancel: false},' .
                     'function(isConfirm) {' .
                     'if (isConfirm) {' .
                     'window.location.assign("../view/makename.php?id=' . $id . '&gen_id=");' .
-                    '}else {window.location.assign("../view/findparent.php?id=' . $id . '&type=' . $check . '");}' .
+                    '}else {window.location.assign("../view/createname.php");}' .
                     '});});';
                     echo "</script>";
                 } else {
@@ -119,12 +119,12 @@ if ($ses_user_id == "") {
                     'showCancelButton: true,' .
                     'confirmButtonColor: "#DD6B55",' .
                     'confirmButtonText: "สร้างชื่อจีนโดยไม่ทราบรุ่นบิดา",' .
-                    'cancelButtonText: "สร้างชื่อจีนจากรุ่นบิดา",' .
+                    // 'cancelButtonText: "สร้างชื่อจีนจากรุ่นบิดา",' .
                     'closeOnConfirm: false, closeOnCancel: false},' .
                     'function(isConfirm) {' .
                     'if (isConfirm) {' .
                     'window.location.assign("../view/makename.php?id=' . $id . '&gen_id=");' .
-                    '}else {window.location.assign("../view/findparent.php?id=' . $id . '&type=' . $check . '");}' .
+                    '}else {window.location.assign("../view/createname.php");}' .
                     '});});';
                     echo "</script>";
                 }
@@ -180,12 +180,12 @@ if ($ses_user_id == "") {
                     'showCancelButton: true,' .
                     'confirmButtonColor: "#DD6B55",' .
                     'confirmButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยมือ",' .
-                    'cancelButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยข้อมูลบิดา",' .
+                    // 'cancelButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยข้อมูลบิดา",' .
                     'closeOnConfirm: false, closeOnCancel: false},' .
                     'function(isConfirm) {' .
                     'if (isConfirm) {' .
                     'window.location.assign("../view/add_chinahouse.php?id=' . $id . '&gen_id=");' .
-                    '}else {window.location.assign("../view/findparent.php?id=' . $id . '&type=' . $check . '");}' .
+                    '}else {window.location.assign("../view/ancestorsaddr.php");}' .
                     '});});';
                     echo "</script>";
                 } else {
@@ -221,12 +221,12 @@ if ($ses_user_id == "") {
                     'showCancelButton: true,' .
                     'confirmButtonColor: "#DD6B55",' .
                     'confirmButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยมือ",' .
-                    'cancelButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยข้อมูลบิดา",' .
+                    // 'cancelButtonText: "เพื่มข้อมูลที่อยู่บรรพบุรุษที่ประเทศจีนด้วยข้อมูลบิดา",' .
                     'closeOnConfirm: false, closeOnCancel: false},' .
                     'function(isConfirm) {' .
                     'if (isConfirm) {' .
                     'window.location.assign("../view/add_chinahouse.php?id=' . $id . '&gen_id=");' .
-                    '}else {window.location.assign("../view/findparent.php?id=' . $id . '&type=' . $check . '");}' .
+                    '}else {window.location.assign("../view/ancestorsaddr.php");}' .
                     '});});';
 
                     echo "</script>";
