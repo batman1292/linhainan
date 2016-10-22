@@ -16,7 +16,7 @@ if ($ses_user_id == "") {
         <link href=../../"css/bootstrap-material-design-master/dist/css/material.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/bootstrap-material-design-master/dist/css/material-wfont.min.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/tooltips/tooltips.css" rel="stylesheet" type="text/css"/>
-        <link href="../../css/loading.css" rel="stylesheet" type="text/css"/> 
+        <link href="../../css/loading.css" rel="stylesheet" type="text/css"/>
         <link href="../../css/menu.css" rel="stylesheet" type="text/css"/>
         <script src="../../css/sweetalert/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../../css/sweetalert/sweetalert.css">
@@ -89,6 +89,9 @@ if ($ses_user_id == "") {
                             </div>
                         </div>
                         <div class="row" style="margin-top: 20px">
+                            <!-- <div class="col-xs-3">
+                                <a class="btn btn-material-deeppurple" style="color: white" role="button" style="margin-top: 10px" onClick="javascript:window.open('setup_user.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=1000,height=650,top=0,left=150 ')">จัดการ User</a>
+                            </div> -->
                             <div class="col-xs-3 col-xs-offset-9">
                                 <button class="btn btn-material-pink" style="color: white" type="button" style="margin-top: 10px" name="clear_previous" onClick="clear_reg()">เคลียผู้ร่วมงานปีที่แล้ว</button>
                             </div>
@@ -97,7 +100,7 @@ if ($ses_user_id == "") {
                 </div>
 
         </div>
-    </center>            
+    </center>
 </div>
 </body>
 </html>

@@ -27,7 +27,7 @@
 //                window.close();
             });
         </script>
-<style>
+        <style>
 
             @media print
             {
@@ -36,7 +36,7 @@
                     top: 0;
                 }
 
-                #content {
+                #content print {
                     /*page-break-before: always;*/
 
                     page-break-inside: avoid;
@@ -309,13 +309,13 @@
                         <h5>ชื่อจีน 林</h5>
                     </div>
                     <div class="col-xs-1">
-                        <h5>รุ่น</h5> 
+                        <h5>รุ่น</h5>
                     </div>
                     <div class="col-xs-3" style="margin: 5 0px">
                         <input type="text" class="form-control"autofocus name="chinaname" value="<?php echo $gen_detial['GENERATION_NAME']; ?>" placeholder="">
                     </div>
                     <div class="col-xs-1">
-                        <h5>ชื่อ</h5> 
+                        <h5>ชื่อ</h5>
                     </div>
                     <div class="col-xs-2">
                         <input type="text" class="form-control"autofocus name="chinaname" value="<?php echo $chinaname['CHINANAME_NAME']; ?>" placeholder="">
@@ -326,14 +326,14 @@
                         <h5>เสียง pinyin lin</h5>
                     </div>
                     <div class="col-xs-1">
-                        <h5>รุ่น</h5> 
+                        <h5>รุ่น</h5>
                     </div>
                     <div class="col-xs-3" >
                         <input type="text" class="form-control"autofocus name="chinaname_thai" value="<?php echo $gen_detial['GENERATION_PINYIN']; ?>" placeholder="">
 
                     </div>
                     <div class="col-xs-1">
-                        <h5>ชื่อ</h5> 
+                        <h5>ชื่อ</h5>
                     </div>
                     <div class="col-xs-2">
                         <input type="text" class="form-control"autofocus name="chinaname_pinyin" value="<?php echo $chinaname['CHINANAME_PINYIN']; ?>" placeholder="">
@@ -344,14 +344,14 @@
                         <h5>คำอ่านไทย หลิน</h5>
                     </div>
                     <div class="col-xs-1">
-                        <h5>รุ่น</h5> 
+                        <h5>รุ่น</h5>
                     </div>
                     <div class="col-xs-3" >
                         <input type="text" class="form-control"autofocus name="chinaname_thai" value="<?php echo $gen_detial['GENERATION_TH']; ?>" placeholder="">
 
                     </div>
                     <div class="col-xs-1">
-                        <h5>ชื่อ</h5> 
+                        <h5>ชื่อ</h5>
                     </div>
                     <div class="col-xs-2">
                         <input type="text" class="form-control"autofocus name="chinaname_thai" value="<?php echo $chinaname['CHINANAME_TH']; ?>" placeholder="">
@@ -382,10 +382,10 @@
                 <div class="row">
                     <div class="col-xs-2">
                         <h6>ที่อยู่บ้าน</h6>
-                    </div>  
+                    </div>
                     <div class="col-xs-2">
                         <h6>บ้านเลขที่</h6>
-                    </div>  
+                    </div>
                     <div class="col-xs-2">
                         <input type="text" class="form-control" value="<?php echo ($homeAddr['ADDRESS_NUM']); ?>">
                     </div>
@@ -483,11 +483,11 @@
                         <h4>2.อาชีพ/ธุรกิจหลัก</h4>
                     </div>
                     <div class="col-xs-9" style="margin-top:7px">
-                        <input type="checkbox" name="gender" value="1" <?php if ($org_type == 1) echo "checked"; ?> >รับราชการ 
-                        <input type="checkbox" name="gender" value="2" <?php if ($org_type == 2) echo "checked"; ?> >รัฐวิสาหกิจ 
-                        <input type="checkbox" name="gender" value="3" <?php if ($org_type == 3) echo "checked"; ?> >เอกชน 
-                        <input type="checkbox" name="gender" value="4" <?php if ($org_type == 4) echo "checked"; ?> >นักเรียน / นักศึกษา 
-                        <input type="checkbox" name="gender" value="5" <?php if ($org_type == 5) echo "checked"; ?> >อิสระ 
+                        <input type="checkbox" name="gender" value="1" <?php if ($org_type == 1) echo "checked"; ?> >รับราชการ
+                        <input type="checkbox" name="gender" value="2" <?php if ($org_type == 2) echo "checked"; ?> >รัฐวิสาหกิจ
+                        <input type="checkbox" name="gender" value="3" <?php if ($org_type == 3) echo "checked"; ?> >เอกชน
+                        <input type="checkbox" name="gender" value="4" <?php if ($org_type == 4) echo "checked"; ?> >นักเรียน / นักศึกษา
+                        <input type="checkbox" name="gender" value="5" <?php if ($org_type == 5) echo "checked"; ?> >อิสระ
                     </div>
                 </div>
                 <div class="row">
@@ -515,10 +515,10 @@
                 <div class="row">
                     <div class="col-xs-2">
                         <h6>ที่อยู่ที่ทำงาน</h6>
-                    </div>  
+                    </div>
                     <div class="col-xs-2">
                         <h6>เลขที่</h6>
-                    </div>  
+                    </div>
                     <div class="col-xs-2">
                         <input type="text" class="form-control" value="<?php echo ($org_addr['ADDRESS_NUM']); ?>">
                     </div>
@@ -683,8 +683,12 @@
                         <input type="text" class="form-control" value="<?php echo $chinahouse_province_string; ?>">
                     </div>
                 </div>
-    		<br>
-<br>
+    		<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
                 <?php
                 if ($person['PARENT_ID'] != 0 || $person['BROTHER_LIST'] != '') {
                     ?>
@@ -728,7 +732,7 @@
                                         ?>
         <!--                                            <input type="radio" name="parent_status<?php //echo $count_brother;               ?>" value="1" <?php //if(get_status($brother['ID'])==1)echo "checked";                ?>>ยังมีชีวิตอยู่
                                             <input type="radio" name="parent_status<?php //echo $count_brother;               ?>" value="2" <?php //if(get_status($brother['ID'])==2)echo "checked";                ?>>เสียชีวิต-->
-                                    </div>  
+                                    </div>
                                 </div>
                                 <?php
                                 $count_brother++;
@@ -751,7 +755,7 @@
                                 <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="">
                                 <datalist id="list_bro1" class="list_bro1">
 
-                                </datalist> 
+                                </datalist>
                             </div>
                             <div class="col-xs-2">
                                 <h5>วันเกิด(ค.ศ.)</h5>
@@ -788,7 +792,7 @@
                                 <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="">
                                 <datalist id="list_bro1" class="list_bro1">
 
-                                </datalist> 
+                                </datalist>
                             </div>
                             <div class="col-xs-2">
                                 <h5>วันเกิด(ค.ศ.)</h5>
@@ -818,8 +822,8 @@
                                     <div class="col-xs-4">
                                         <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="">
                                         <datalist id="list_bro1" class="list_bro1">
-                
-                                        </datalist> 
+
+                                        </datalist>
                                     </div>
                                     <div class="col-xs-2">
                                         <h5>วันเกิด(ค.ศ.)</h5>
@@ -837,14 +841,14 @@
                                         <input type="radio" name="bro1_status" value="2" id="bro1_status2">เสียชีวิต
                                     </div>
                                 </div>
-                
+
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <h5>2.ชื่อนามสกุล</h5>
                                     </div>
                                     <div class="col-xs-4">
                                         <input type="text" class="namebro2 form-control" list="list_bro2" autofocus name="namebro2" value="">
-                
+
                                     </div>
                                     <div class="col-xs-2">
                                         <h5>วันเกิด(ค.ศ.)</h5>
@@ -869,8 +873,8 @@
                                         <div class="col-xs-4">
                                             <input type="text" class="namebro3 form-control" list="list_bro3" autofocus name="namebro3" value="">
                                             <datalist id="list_bro3" class="list_bro3">
-                
-                                            </datalist> 
+
+                                            </datalist>
                                         </div>
                                         <div class="col-xs-2">
                                             <h5>วันเกิด(ค.ศ.)</h5>
@@ -958,7 +962,7 @@
                                         ?>
         <!--                                            <input type="radio" name="parent_status<?php //echo $count_brother;              ?>" value="1" <?php //if(get_status($brother['ID'])==1)echo "checked";               ?>>ยังมีชีวิตอยู่
                                             <input type="radio" name="parent_status<?php //echo $count_brother;               ?>" value="2" <?php //if(get_status($brother['ID'])==2)echo "checked";                ?>>เสียชีวิต-->
-                                    </div>  
+                                    </div>
                                 </div>
                                 <?php
                                 $count++;
@@ -980,7 +984,7 @@
                                     <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="">
                                     <datalist id="list_bro1" class="list_bro1">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-2">
                                     <h5>วันเกิด(ค.ศ.)</h5>
@@ -1005,8 +1009,8 @@
                                     <input type="radio" name="child<?php echo $i; ?>_relation" value="2" id="child3_relation2" <?php if ($person["GENDER_ID"] == 2) echo "checked"; ?>>มารดา
                                 </div>
                             </div>
-                            <?php 
-                            }   
+                            <?php
+                            }
                         }
                         ?>
                     </div>
@@ -1026,7 +1030,7 @@
                                     <input type="text" class="namebro1 form-control" list="list_bro1" autofocus name="namebro1" value="">
                                     <datalist id="list_bro1" class="list_bro1">
 
-                                    </datalist> 
+                                    </datalist>
                                 </div>
                                 <div class="col-xs-2">
                                     <h5>วันเกิด(ค.ศ.)</h5>
@@ -1065,8 +1069,8 @@
                                         <div class="col-xs-4">
                                             <input type="text" class="namechild3 form-control" list="list_child3" autofocus name="namechild3" value="">
                                             <datalist id="list_child3" class="list_child3">
-                
-                                            </datalist> 
+
+                                            </datalist>
                                         </div>
                                         <div class="col-xs-2">
                                             <h5>วันเกิด(ค.ศ.)</h5>
@@ -1098,8 +1102,8 @@
                                         <div class="col-xs-4">
                                             <input type="text" class="namechild4 form-control" list="list_child4" autofocus name="namechild4" value="">
                                             <datalist id="list_child4" class="list_child4">
-                
-                                            </datalist> 
+
+                                            </datalist>
                                         </div>
                                         <div class="col-xs-2">
                                             <h5>วันเกิด(ค.ศ.)</h5>

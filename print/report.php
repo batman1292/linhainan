@@ -47,15 +47,16 @@
                 include '../helper/helper.php';
                 connect_database();
 
-                if ($search_type == 1) {
-                    $query = "SELECT REGISTER_OWNER_ID FROM register "
-                            . "LEFT JOIN personname ON register.REGISTER_OWNER_ID = personname.PERSONNAME_OWNER_ID "
-                            . "WHERE (REGISTER_NUMBER BETWEEN $start_data AND $end_data) AND REGISTER_FROM_DATE LIKE '%$year%' ORDER BY PERSONNAME_NAME";
-                } else {
-                    $query = "SELECT register.REGISTER_OWNER_ID FROM register "
-                            . "LEFT JOIN personname ON register.REGISTER_OWNER_ID = personname.PERSONNAME_OWNER_ID "
-                            . "WHERE (personname.PERSONNAME_NAME BETWEEN '$start_data' AND '$end_data') AND register.REGISTER_FROM_DATE LIKE '%$year%' ORDER BY PERSONNAME_NAME";
-                }
+                // if ($search_type == 1) {
+                //     $query = "SELECT REGISTER_OWNER_ID FROM register "
+                //             . "LEFT JOIN personname ON register.REGISTER_OWNER_ID = personname.PERSONNAME_OWNER_ID "
+                //             . "WHERE (REGISTER_NUMBER BETWEEN $start_data AND $end_data) AND REGISTER_FROM_DATE LIKE '%$year%' ORDER BY PERSONNAME_NAME";
+                // } else {
+                //     $query = "SELECT register.REGISTER_OWNER_ID FROM register "
+                //             . "LEFT JOIN personname ON register.REGISTER_OWNER_ID = personname.PERSONNAME_OWNER_ID "
+                //             . "WHERE (personname.PERSONNAME_NAME BETWEEN '$start_data' AND '$end_data') AND register.REGISTER_FROM_DATE LIKE '%$year%' ORDER BY PERSONNAME_NAME";
+                // }
+                $query = search_between_data($start_data, $end_data, $search_type);
                 ?>
                 <div class="row">
                     <div class="col-xs-1">
@@ -141,7 +142,7 @@
                     <div class="col-xs-12">
                         ที่อยู่
                     </div>
-                </div>                
+                </div>
                 <!--                                echo "ที่อยู่";
                                                 echo "<br/>";-->
                 <div class="row">
@@ -157,7 +158,7 @@
                     <div class="col-xs-3">
                         สถานะภาพ
                     </div>
-                </div>                       
+                </div>
                 <!--                                echo "ชื่อ-สกุลมารดา สถานภาพ ชื่อ-สกุลบิดา สถานะภาพ";
                                                 echo "<br/>";-->
                 <div class="row">
@@ -170,14 +171,14 @@
                     <div class="col-xs-4">
                         เบอร์โทรศัพท์
                     </div>
-                </div>   
+                </div>
                 <!--                echo "ชื่อ-สกุลบรรพบุรุษที่ประเทศจีน ความสัมพันธ์ เบอร์โทรศัพท์";
                                 echo "<br/>";-->
                 <div class="row">
                     <div class="col-xs-12">
                         ที่อยู่
                     </div>
-                </div>  
+                </div>
                 <div class="row">
                     <div class="col-xs-4">
                         ชื่อ-สกุลพี่น้อง
@@ -188,7 +189,7 @@
                     <div class="col-xs-4">
                         วันเกิด(คศ.)
                     </div>
-                </div> 
+                </div>
                 <!--                echo "ที่อยู่";
                                 echo "<br/>";-->
                 <!--                echo "ชื่อ-สกุลพี่น้อง1 ชื่อจีน วันเกิด(คศ.)";
@@ -490,7 +491,7 @@
                         <div class="col-xs-2">
                             <?php echo ($line['CONTACT_STRING']); ?>
                         </div>
-                    </div>    
+                    </div>
                     <?php
 //                    echo $homePhoneSting;
 //                    echo " ";
@@ -527,7 +528,7 @@
                             ?>
                         </div>
 
-                    </div>    
+                    </div>
                     <?php
 //                    echo ($homeAddr['ADDRESS_NUM']);
 //                    echo " ";
@@ -638,7 +639,7 @@
                             ?>
                         </div>
 
-                    </div>  
+                    </div>
                     <?php
 //                        echo ($org_addr['ADDRESS_NUM']);
 //                        echo " ";
@@ -688,7 +689,7 @@
                             }
                             ?>
                         </div>
-                    </div> 
+                    </div>
                     <?php
 //                    echo $parent_string;
 //                    echo " ";
@@ -721,7 +722,7 @@
                         <div class="col-xs-4">
                             <?php echo $chinahouse_tel; ?>
                         </div>
-                    </div>   
+                    </div>
                     <?php
 //                    echo $chinahouse_name;
 //                    echo " ";
@@ -742,7 +743,7 @@
                             echo $chinahouse_province_string;
                             ?>
                         </div>
-                    </div>   
+                    </div>
                     <?php
 //                    echo $chinahouse_village_string;
 //                    echo " ";
@@ -782,7 +783,7 @@
                                     }
                                     ?>
                                 </div>
-                            </div>     
+                            </div>
                             <?php
 //                            echo get_person_name_string($brother['ID']) . " " . get_person_surname_string($brother['ID']);
 //                            echo " ";

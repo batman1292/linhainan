@@ -75,7 +75,7 @@
                             </tr>
                             <tr>
                                 <td>รายงาน</td>
-                                <td><a href="print_report.php" class="mdi-content-content-paste" style="color: white"> พิมพ์รายงานผู้ลงทะเบียนประจำปี</a></td>
+                                <td><a href="print_report.php" class="mdi-content-content-paste" style="color: white"> พิมพ์รายงานข้อมูลสมาชิก</a></td>
                             </tr>
                         </tbody>
                     </table>

@@ -46,18 +46,18 @@
             $end_data = $_GET['end_data'];
             $search_type = $_GET['search_type'];
             $numprint = $_GET['num_print'];
-            
+
             include '../helper/db_connect.php';
             include '../helper/helper.php';
             connect_database();
-            
-            if($search_type == 1){
-                $query = "SELECT REGISTER_OWNER_ID FROM register WHERE (REGISTER_NUMBER BETWEEN $start_data AND $end_data) AND REGISTER_THRU_DATE = ''";
-            }else{
-                $query = "SELECT PERSONNAME_OWNER_ID FROM personname WHERE PERSONNAME_NAME BETWEEN '$start_data' AND '$end_data'";
-            }
-            
-            $persons = mysql_query($query);
+
+            // if($search_type == 1){
+            //     $query = "SELECT ID FROM person WHERE (REGISTER_NUMBER BETWEEN $start_data AND $end_data) AND REGISTER_THRU_DATE = ''";
+            // }else{
+            //     $query = "SELECT PERSONNAME_OWNER_ID FROM personname WHERE PERSONNAME_NAME BETWEEN '$start_data' AND '$end_data'";
+            // }
+
+            $persons = mysql_query(search_between_data($start_data, $end_data, $search_type));
             $count = 0;
             while ($person = mysql_fetch_row($persons)) {
                 for($i = 0; $i<$numprint; $i++){
@@ -71,7 +71,7 @@
                         $homeAddr = give_addr();
                     }
                     if ($count % 3 == 0) {
-                        ?>  
+                        ?>
                         <div class="row">
 
 
@@ -81,7 +81,7 @@
                             <?php
                             echo 'ชื่อและที่อยู่ผู้รับ';
                     echo '<br/>';
-                    echo $person_name.$id;
+                    echo $person_name.'('.$id.')';
                     $addr_string = "บ้านเลขที่ " . $homeAddr['ADDRESS_NUM'];
 
                         if ($homeAddr['ADDRESS_MOO'] != '')
@@ -93,7 +93,7 @@
                         if ($homeAddr['ADDRESS_VILLAGE'] != '')
                             $addr_string .= ' ' . $homeAddr['ADDRESS_VILLAGE'];
                         else {
-                            $addr_string .= ' ';    
+                            $addr_string .= ' ';
                         }
 
                         echo '<br/>';
@@ -127,7 +127,7 @@
                             ?>
                         </div>
                         <?php
-                    }   
+                    }
                     $count++;
                 }
             }

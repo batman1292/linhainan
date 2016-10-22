@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="row" style="margin-top: 10px">
-                                <div class="col-xs-1" style="margin-top: 10px">
+                                <div class="col-xs-1 col-xs-offset-3" style="margin-top: 10px">
                                     เริ่ม
                                 </div>
                                 <div class="col-xs-1">
@@ -90,7 +90,7 @@
                                         <option value="2">ตัวอักษรตัวแรกของชื่อ</option>
                                     </select>
                                 </div>
-                                <div class="col-xs-3" style="margin-top: 10px">
+                                <!-- <div class="col-xs-3" style="margin-top: 10px">
                                     เลือกปีที่ต้องการค้นหา
                                 </div>
                                 <div class="col-xs-2">
@@ -103,7 +103,7 @@
                                         }
                                         ?>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row" style="margin-top:50px">
                                 <div class="col-xs-2 col-xs-offset-3">
@@ -125,8 +125,8 @@
                         $end_data = $_GET['end_data'];
                         $search_type = $_GET['option'];
 //                        $numprint = $_GET['numprint'];
-                        $year = $_GET['year'];
-                        $check = mysql_fetch_assoc(mysql_query(search_reg_between_data($start_data, $end_data, $search_type, $year)));
+                        // $year = $_GET['year'];
+                        $check = mysql_fetch_assoc(mysql_query(search_between_data($start_data, $end_data, $search_type)));
                         if (!$check) {
                             echo "<script type='text/javascript'>";
                             echo "alert('ไม่พบข้อมูลที่ท่านค้นหา');";
@@ -141,7 +141,7 @@
                     }
                     ?>
                 </div>
-            </center>            
+            </center>
         </div>
     </body>
 </html>

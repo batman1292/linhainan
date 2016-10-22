@@ -1221,7 +1221,7 @@ function count_all_person_detial() {
 //BVH 17/11/2015
 function search_between_data($start, $end, $type) {
     if ($type == 1) {
-        $query = "SELECT REGISTER_OWNER_ID FROM register WHERE (REGISTER_NUMBER BETWEEN $start AND $end) AND REGISTER_THRU_DATE = ''";
+        $query = "SELECT ID FROM person WHERE ID BETWEEN $start AND $end";
     } else {
         $query = "SELECT PERSONNAME_OWNER_ID FROM personname WHERE PERSONNAME_NAME BETWEEN '$start' AND '$end'";
     }
