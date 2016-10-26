@@ -63,7 +63,7 @@ $id = $_GET['id'];
     <body class="btn-danger">
         <!--<div class="container">-->
         <div class=" col-sm-12">
-            <center>                
+            <center>
                 <?php
                 include '../../helper/db_connect.php';
                 include '../../helper/helper.php';
@@ -90,8 +90,12 @@ $id = $_GET['id'];
             <div class="well">
                 <form  action="../action/add.php" method="Post" style="margin:10 10 10 10" enctype="multipart/form-data">
                     <div class="row">
+                      <div class="col-xs-3">
                         <h3>ข้อมูลที่ทำงาน</h3>
-                        <a onClick="javascript:window.location.assign('new_organization.php?id=<?php echo $id; ?>')">เพิ่มที่ทำงาน</a>
+                      </div>
+                      <div class="col-xs-2" style="margin-top:25px">
+                        <a onClick="javascript:window.location.assign('new_organization.php?id=<?php echo $id; ?>')">+ เพิ่มที่ทำงาน</a>
+                      </div>
                     </div>
                     <?php
 //                    $organizationAddrs = get_person_organization_all($id);
@@ -189,7 +193,7 @@ $id = $_GET['id'];
                                         <div class="col-sm-12">
                                             ไม่พบข้อมูลที่อยู่กรุณาเพิ่มที่อยู่
                                         </div>
-                                    </div>    
+                                    </div>
                                     <?php
                                 }
                                 ?>

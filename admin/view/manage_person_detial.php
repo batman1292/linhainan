@@ -305,7 +305,7 @@ if (isset($_GET['type'])) {
                                 <a class="btn btn-primary" role="button" style="width: 175px;" onClick="javascript:window.open('../../print/edit.php?id=<?php echo $id; ?>', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=500,height=650,top=0,left=150 ')">พิมพ์ข้อมูลทั้งหมด</a>
                             </div>
                             <div class="row">
-                                <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.history.back();">ย้อนกลับ</a>
+                                <a class="btn btn-danger" role="button" style="width: 175px;" onClick="javascript:window.location.href = './manage_person_table.php';">ย้อนกลับ</a>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -339,7 +339,7 @@ if (isset($_GET['type'])) {
                                     <input type="file" name="picture" id="picture" data-input="false"  class="filestyle" data-buttonText="เปลี่ยนรูปประจำตัว" required accept="image/*" value="fasfs" onchange="ValidateSingleInput(this);">
                                 </div>
                                 <div class="row">
-                                    <button class="btn btn-success" style="width: 175px;" type="submit">เปลี่ยนรูปประจำตัว</button>
+                                    <button class="btn btn-success" style="width: 175px;" type="submit">บันทึกรูปประจำตัว</button>
                                     <a class="btn btn-material-deeporange" role="button" style="width: 175px;" onClick="window.location.href = ''" >ยกเลิก</a>
                                 </div>
 
@@ -1045,7 +1045,7 @@ if (isset($_GET['type'])) {
                             ?>
                             <center>
                                 <div class="row">
-                                    <div class="col-xs-4 col-xs-offset-2">
+                                    <div class="col-xs-5 col-xs-offset-2">
                                         <h5 class="text-danger">ไม่พบข้อมูลบุตร-ธิดา กรุณากดปุ่มเพิ่มข้อมูลบุตร-ธิดา</h5>
                                     </div>
                                     <div class="col-xs-4 ">

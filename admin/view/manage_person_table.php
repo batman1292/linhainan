@@ -128,7 +128,7 @@ if ($ses_user_id == "") {
                                         ?>
                                     </select>
                                 </div>
-                                <div class="col-xs-4 col-xs-offset-2">
+                                <div class="col-xs-4 col-xs-offset-0">
                                     <input type="text" class="form-control" placeholder="กรอกข้อมูลที่ต้องการค้นหา" required autofocus name="data" id="data">
                                 </div>
                                 <div class="col-xs-3">
@@ -187,8 +187,11 @@ if ($ses_user_id == "") {
                                 <div class="col-xs-2">
                                     <button class="btn btn-success" type="submit" style="margin-top: -10px" name="search">ค้นหา</button>
                                 </div>
+                                <div class="col-xs-2">
+                                    <a class="btn btn-material-orange" style="color: white; margin-top: -10px" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูล</a>
+                                </div>
                             </div>
-                            <div class="row" style="margin-top: 20px">
+                            <!-- <div class="row" style="margin-top: 20px">
 
                                 <div class="col-xs-2 col-xs-offset-10">
                                     <a class="btn btn-material-orange" style="color: white" role="button" style="margin-top: 0px" onClick="javascript:window.open('add_form.php', '', 'nenuber=no,toorlbar=no,location=no,scrollbars=no, status=no,resizable=no,width=800,height=650,top=0,left=150 ')">เพิ่มข้อมูล</a>
@@ -197,7 +200,7 @@ if ($ses_user_id == "") {
                                 <div class="col-xs-3">
 
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row" style="margin-top: 20px" id="loading" hidden>
                                 <center>
                                     <div id="fountainTextG"><div id="fountainTextG_1" class="fountainTextG">L</div><div id="fountainTextG_2" class="fountainTextG">o</div><div id="fountainTextG_3" class="fountainTextG">a</div><div id="fountainTextG_4" class="fountainTextG">d</div><div id="fountainTextG_5" class="fountainTextG">i</div><div id="fountainTextG_6" class="fountainTextG">n</div><div id="fountainTextG_7" class="fountainTextG">g</div></div>

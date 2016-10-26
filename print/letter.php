@@ -30,7 +30,7 @@
         </script>
     </head>
     <body>
-    <center>
+    <!-- <center> -->
         <?php
         $id = $_GET['id'];
 
@@ -69,6 +69,9 @@
             $addr_string .= ' ' . $homeAddr['ADDRESS_VILLAGE'];
 
         echo '<br/>';
+        ?>
+        <div style="text-align: right">
+        <?php
         echo $addr_string;
         $addr_string = '';
         if ($homeAddr['ADDRESS_ALLEY'] != '')
@@ -88,6 +91,7 @@
         echo '<br/>';
         echo get_addr_string($homeAddr);
         ?>
-    </center>
+      </div>
+    <!-- </center> -->
     </body>
 </html>
